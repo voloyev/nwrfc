@@ -420,7 +420,7 @@ module NWRFC
   class Structure < DataContainer
     def to_hash
       fields.map do |field|
-        [field, self[field]
+        [field, self[field]]
       end.to_h
     end
   end # class Structure
