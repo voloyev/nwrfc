@@ -40,7 +40,7 @@ module NWRFC
           return read_chars(metadata)
 
         when :RFCTYPE_DATE
-          return Date.parse(read_chars(metadata))
+          return Date.parse(read_chars(metadata)) rescue nil
         #return Date.new(date[0..3].to_i, date[4..5].to_i, date[6..7].to_i)
 
         when :RFCTYPE_BCD
