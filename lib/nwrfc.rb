@@ -418,9 +418,11 @@ module NWRFC
   # handle of a structure. A user can obtain an instance by invoking sub-field
   # access of a structure or a function
   class Structure < DataContainer
-
-
-    
+    def to_hash
+      fields.map do |field|
+        [field, self[field]
+      end.to_h
+    end
   end # class Structure
 
 end #module NWRFC
