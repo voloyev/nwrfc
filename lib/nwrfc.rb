@@ -412,12 +412,20 @@ module NWRFC
       end
     end
 
+    # Parse table as Array of Hashe's
+    # Each row is a Hash
+    # @return Array
+    def to_array
+      map(&:to_hash)
+    end
   end #class Table
 
   # Represents a structure. An instance is obtained internally by passing the
   # handle of a structure. A user can obtain an instance by invoking sub-field
   # access of a structure or a function
   class Structure < DataContainer
+    # Translate Structure to Hash
+    # @return Hash
     def to_hash
       fields.map do |field|
         [field, self[field]]
